@@ -28,7 +28,9 @@ docker run --rm <your-dockerhub-username>/base:latest mise --version
 ## Building Locally
 
 ```bash
-docker build -t base:local --build-arg TARGETARCH=$(uname -m) .
+docker build -t base:local --build-arg TARGETARCH=amd64 .
+# For ARM64:
+# docker build -t base:local --build-arg TARGETARCH=arm64 .
 ```
 
 ## Use Cases
