@@ -12,6 +12,3 @@ RUN apt-get update -qq && \
     wget --progress=dot:giga --no-check-certificate -O /usr/bin/tini https://github.com/krallin/tini/releases/download/v0.19.0/tini-static-${TARGETARCH} && \
     chmod +x /usr/bin/tini && \
     rm -rf /var/lib/apt/lists/*
-
-# Default command - note that entrypoint is already "mise"
-CMD ["version"]
