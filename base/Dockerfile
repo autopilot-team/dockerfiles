@@ -11,7 +11,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Install system dependencies, canvas runtime deps, Docker, and tini
 # hadolint ignore=DL3008
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y apt-transport-https build-essential ca-certificates curl gnupg libvips-dev libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libjpeg62-turbo libgif-dev librsvg2-2 python3 pkg-config lsb-release && \
+    apt-get install --no-install-recommends -y apt-transport-https build-essential ca-certificates curl gnupg libvips-dev libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libjpeg62-turbo libgif-dev librsvg2-2 lsb-release node-gyp python3 pkg-config && \
     curl -L https://github.com/krallin/tini/releases/download/v0.19.0/tini-static-${TARGETARCH} -o /usr/bin/tini && \
     chmod +x /usr/bin/tini && \
     curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg && \
