@@ -8,7 +8,7 @@ This is a monorepo containing multiple Dockerfile projects. Each project is orga
 
 ```
 dockerfiles/
-├── mise/           # Mise tool version manager
+├── base/           # Base image with mise and system dependencies
 │   ├── Dockerfile
 │   └── README.md
 └── ...             # More Dockerfiles coming soon
@@ -16,11 +16,12 @@ dockerfiles/
 
 ## 🚀 Available Images
 
-### Mise
-Docker image based on mise polyglot tool version manager.
-- **Location**: `dockerfiles/mise/`
+### Base
+Base Docker image with mise polyglot tool version manager and common system dependencies.
+- **Location**: `dockerfiles/base/`
 - **Base Image**: `jdxcode/mise:2025.12.0`
-- **Docker Hub**: `<your-username>/mise`
+- **Docker Hub**: `<your-username>/base`
+- **Includes**: libvips, cairo, pango, image format libraries, tini process manager
 
 ## 🔧 Usage
 
