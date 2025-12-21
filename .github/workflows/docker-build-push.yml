@@ -127,7 +127,7 @@ jobs:
           images: ${{ secrets.DOCKER_USERNAME }}/${{ matrix.dockerfile.name }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
-            type=sha,prefix={{branch}}-
+            type=sha,prefix=sha-
             type=ref,event=pr
 
       - name: Build Docker image (PR)
