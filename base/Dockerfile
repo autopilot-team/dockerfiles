@@ -23,4 +23,5 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y doppler docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && \
     rm -rf /var/lib/apt/lists/*
 
+# hadolint ignore=DL3016
 RUN npm install -g node-gyp
