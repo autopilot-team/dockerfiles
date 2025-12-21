@@ -31,13 +31,13 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: |
-            dockerfiles/**/Dockerfile
+            **/Dockerfile
 
       - name: Set matrix
         id: set-matrix
         run: |
-          # Find all Dockerfiles
-          dockerfiles=$(find dockerfiles -name "Dockerfile" -type f | sort)
+          # Find all Dockerfiles (excluding .github directory)
+          dockerfiles=$(find . -name "Dockerfile" -type f ! -path "./.github/*" | sort)
           
           # If this is a PR, only include changed Dockerfiles
           if [ "${{ github.event_name }}" == "pull_request" ]; then

@@ -4,10 +4,9 @@ A collection of production-ready Dockerfiles with automated builds and CI/CD.
 
 ## 📁 Repository Structure
 
-This is a monorepo containing multiple Dockerfile projects. Each project is organized in its own directory under `dockerfiles/`:
+This is a monorepo containing multiple Dockerfile projects. Each project is organized in its own directory at the root level:
 
 ```
-dockerfiles/
 ├── base/           # Base image with mise and system dependencies
 │   ├── Dockerfile
 │   └── README.md
@@ -18,7 +17,7 @@ dockerfiles/
 
 ### Base
 Base Docker image with mise polyglot tool version manager and common system dependencies.
-- **Location**: `dockerfiles/base/`
+- **Location**: `base/`
 - **Base Image**: `jdxcode/mise:2025.12.0`
 - **Docker Hub**: `<your-username>/base`
 - **Includes**: libvips, cairo, pango, image format libraries, tini process manager
@@ -32,7 +31,7 @@ Each Dockerfile project has its own README with specific usage instructions. Nav
 To build any Dockerfile locally:
 
 ```bash
-cd dockerfiles/<project-name>
+cd <project-name>
 docker build -t <project-name>:local .
 ```
 
@@ -69,9 +68,9 @@ Images are tagged as follows:
 
 ### Adding a New Dockerfile
 
-1. Create a new directory under `dockerfiles/`:
+1. Create a new directory at the root level:
    ```bash
-   mkdir dockerfiles/<new-project>
+   mkdir <new-project>
    ```
 
 2. Add your `Dockerfile` and a `README.md` with usage instructions
@@ -97,7 +96,7 @@ Dockerfiles are automatically linted using [hadolint](https://github.com/hadolin
 
 To lint locally:
 ```bash
-docker run --rm -i hadolint/hadolint < dockerfiles/<project>/Dockerfile
+docker run --rm -i hadolint/hadolint < <project>/Dockerfile
 ```
 
 ## 📄 License
