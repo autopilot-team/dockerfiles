@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM jdxcode/mise:2025.12.0 AS base
+FROM jdxcode/mise:2026.04.02 AS base
 
 ARG TARGETARCH
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
